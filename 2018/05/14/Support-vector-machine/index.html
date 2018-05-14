@@ -73,8 +73,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="zhouzhongmi" type="application/atom+xml" />
 
@@ -83,17 +81,17 @@
 
 
 
-<meta name="description" content="关于我一个喜欢学习有趣知识的人 email: zhouzhongmi@outlook.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://www.zhouzhongmi.com/about/index.html">
+<meta name="description" content="支持向量机（SVM）本质将低维线性不可分样本空间映射到高维线性可分的空间，找到最优的线性分类面（hyper plane），借助核函数进行低维到高维空间的映射，以及将高维空间内向量的内积简化为低维空间向量的内积运算。 其中，在寻找最优分类面时，根据间距最小，推导出目标函数和约束条件，继而转化为二次优化问题，在原问题满足KKT条件时，获得原优化问题的对偶问题，求解对偶问题获得局部或全局最优解，即可求得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Support vector machine">
+<meta property="og:url" content="http://www.zhouzhongmi.com/2018/05/14/Support-vector-machine/index.html">
 <meta property="og:site_name" content="zhouzhongmi">
-<meta property="og:description" content="关于我一个喜欢学习有趣知识的人 email: zhouzhongmi@outlook.com">
+<meta property="og:description" content="支持向量机（SVM）本质将低维线性不可分样本空间映射到高维线性可分的空间，找到最优的线性分类面（hyper plane），借助核函数进行低维到高维空间的映射，以及将高维空间内向量的内积简化为低维空间向量的内积运算。 其中，在寻找最优分类面时，根据间距最小，推导出目标函数和约束条件，继而转化为二次优化问题，在原问题满足KKT条件时，获得原优化问题的对偶问题，求解对偶问题获得局部或全局最优解，即可求得">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-14T08:20:48.522Z">
+<meta property="og:updated_time" content="2018-05-14T09:00:49.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="关于我一个喜欢学习有趣知识的人 email: zhouzhongmi@outlook.com">
+<meta name="twitter:title" content="Support vector machine">
+<meta name="twitter:description" content="支持向量机（SVM）本质将低维线性不可分样本空间映射到高维线性可分的空间，找到最优的线性分类面（hyper plane），借助核函数进行低维到高维空间的映射，以及将高维空间内向量的内积简化为低维空间向量的内积运算。 其中，在寻找最优分类面时，根据间距最小，推导出目标函数和约束条件，继而转化为二次优化问题，在原问题满足KKT条件时，获得原优化问题的对偶问题，求解对偶问题获得局部或全局最优解，即可求得">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.zhouzhongmi.com/about/"/>
+  <link rel="canonical" href="http://www.zhouzhongmi.com/2018/05/14/Support-vector-machine/"/>
 
 
 
 
 
-  <title>about | zhouzhongmi</title>
+  <title>Support vector machine | zhouzhongmi</title>
   
 
 
@@ -256,35 +254,146 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.zhouzhongmi.com/2018/05/14/Support-vector-machine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mi Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhouzhongmi">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>一个喜欢学习有趣知识的人</p>
-<p>email: <a href="mailto:zhouzhongmi@outlook.com" target="_blank" rel="noopener">zhouzhongmi@outlook.com</a></p>
-
+          <h1 class="post-title" itemprop="name headline">Support vector machine</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-14T09:00:22+00:00">
+                2018-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="支持向量机（SVM）"><a href="#支持向量机（SVM）" class="headerlink" title="支持向量机（SVM）"></a>支持向量机（SVM）</h2><h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><p>将低维线性不可分样本空间映射到高维线性可分的空间，找到最优的线性分类面（hyper plane），借助核函数进行低维到高维空间的映射，以及将高维空间内向量的内积简化为低维空间向量的内积运算。</p>
+<p>其中，在寻找最优分类面时，根据间距最小，推导出目标函数和约束条件，继而转化为二次优化问题，在原问题满足KKT条件时，获得原优化问题的对偶问题，求解对偶问题获得局部或全局最优解，即可求得原问题的局部或全局最优解。</p>
+<h3 id="分析步骤"><a href="#分析步骤" class="headerlink" title="分析步骤"></a>分析步骤</h3><ol>
+<li>使用<strong>R^n</strong>维向量描述样本特征，也即是样本特征向量的选取和归一化；</li>
+<li>根据样本类别设置分类标签；</li>
+<li>选取核函数和对应模型参数；</li>
+<li>对测试数据进行模型训练和交叉验证，评价模型效果；</li>
+<li>对未知数据进行预测；</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/14/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -386,7 +495,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于我"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支持向量机（SVM）"><span class="nav-number">1.</span> <span class="nav-text">支持向量机（SVM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本质"><span class="nav-number">1.1.</span> <span class="nav-text">本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析步骤"><span class="nav-number">1.2.</span> <span class="nav-text">分析步骤</span></a></li></ol></li></ol></div>
             
 
           </div>

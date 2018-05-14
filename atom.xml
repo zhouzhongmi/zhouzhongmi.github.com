@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>zhouzhongmi</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhouzhongmi.com/"/>
-  <updated>2018-05-14T05:57:36.025Z</updated>
+  <updated>2018-05-14T09:00:49.911Z</updated>
   <id>http://www.zhouzhongmi.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Support vector machine</title>
+    <link href="http://www.zhouzhongmi.com/2018/05/14/Support-vector-machine/"/>
+    <id>http://www.zhouzhongmi.com/2018/05/14/Support-vector-machine/</id>
+    <published>2018-05-14T09:00:22.000Z</published>
+    <updated>2018-05-14T09:00:49.911Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="支持向量机（SVM）"><a href="#支持向量机（SVM）" class="headerlink" title="支持向量机（SVM）"></a>支持向量机（SVM）</h2><h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><p>将低维线性不可分样本空间映射到高维线性可分的空间，找到最优的线性分类面（hyper plane），借助核函数进行低维到高维空间的映射，以及将高维空间内向量的内积简化为低维空间向量的内积运算。</p><p>其中，在寻找最优分类面时，根据间距最小，推导出目标函数和约束条件，继而转化为二次优化问题，在原问题满足KKT条件时，获得原优化问题的对偶问题，求解对偶问题获得局部或全局最优解，即可求得原问题的局部或全局最优解。</p><h3 id="分析步骤"><a href="#分析步骤" class="headerlink" title="分析步骤"></a>分析步骤</h3><ol><li>使用<strong>R^n</strong>维向量描述样本特征，也即是样本特征向量的选取和归一化；</li><li>根据样本类别设置分类标签；</li><li>选取核函数和对应模型参数；</li><li>对测试数据进行模型训练和交叉验证，评价模型效果；</li><li>对未知数据进行预测；</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;支持向量机（SVM）&quot;&gt;&lt;a href=&quot;#支持向量机（SVM）&quot; class=&quot;headerlink&quot; title=&quot;支持向量机（SVM）&quot;&gt;&lt;/a&gt;支持向量机（SVM）&lt;/h2&gt;&lt;h3 id=&quot;本质&quot;&gt;&lt;a href=&quot;#本质&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
